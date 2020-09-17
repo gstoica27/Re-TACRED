@@ -24,3 +24,7 @@ save_dir = None
 With the path to your TACRED dataset save directory, and the directory where you wish to save the patched data to respectively.
 
 
+**SpanBERT**
+
+We perform our SpanBERT experiments using the open-source repository provided by Joshi et al. (2019) [here](https://github.com/facebookresearch/SpanBERT). All our experiments are performed using the SpanBERT case-large model. However, we make a few alterations to the evaluation pipeline. This directory contains the *complete* files that contain all our changes. Simply replacy "run_tacred.py" in the SpanBERT repository with our "run_tacred.py" script, and then add the "scorer.py" and "category_maps.py" files in the same directory. Training and evaluation are performed as in the linked repository, but note that for evaluation on the test split, you must pass "--eval_test" as an additional commandline argument.
+
