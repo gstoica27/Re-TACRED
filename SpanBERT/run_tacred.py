@@ -84,9 +84,6 @@ class DataProcessor(object):
     def get_test_examples(self, data_dir):
         """See base class."""
         raw_data = self._read_json(os.path.join(data_dir, "test.json"))
-        # ids_path = '/home/ec2-user/apex/SpanBERT/indices_dir/patched/full/wrong_ids.txt'
-        # ids = set(np.loadtxt(ids_path, dtype=np.str).tolist())
-        # raw_data = [d for d in raw_data if d['id'] in ids]
         return self._create_examples(raw_data, "test"), np.array(raw_data)
 
     def get_labels(self, data_dir, negative_label="no_relation"):
@@ -394,16 +391,6 @@ def evaluate(model, device, eval_dataloader, eval_label_ids, num_labels, id2labe
     print('Num Correct: {} | Num Wrong: {}'.format(len(correct_indices), len(wrong_indices)))
     print('Wrong Predictions: {}')
     print(Counter(wrong_relations))
-    # save_dir = os.path.join(cfg_dict['test_save_dir'], cfg_dict['id'])
-    save_dir = '/home/ec2-user/apex/SpanBERT/indices_dir/tacred/'
-    os.makedirs(save_dir, exist_ok=True)
-    print('saving to: {}'.format(save_dir))
-    np.savetxt(os.path.join(save_dir, 'correct_ids.txt'), correct_ids, fmt='%s')
-    np.savetxt(os.path.join(save_dir, 'wrong_ids.txt'), wrong_ids, fmt='%s')
-    np.savetxt(os.path.join(save_dir, 'wrong_predictions.txt'), wrong_relations, fmt='%s')
-    np.savetxt(os.path.join(save_dir, 'correct_predictions.txt'), correct_predictions, fmt='%s')
-    np.savetxt(os.path.join(save_dir, 'all_predictions.txt'), all_predictions, fmt='%s')
-    np.savetxt(os.path.join(save_dir, 'all_ids.txt'), all_ids, fmt='%s')
 
     ids = [instance['id'] for instance in raw_data]
     formatted_data = []
@@ -417,13 +404,25 @@ def evaluate(model, device, eval_dataloader, eval_label_ids, num_labels, id2labe
         )
 
     id2preds = {d['id']: pred for d, pred in zip(raw_data, pred_labels)}
-    json.dump(id2preds, open(os.path.join(save_dir, 'id2preds.json'), 'w'))
 
-    with open(os.path.join(save_dir, 'spanbert_tacred.jsonl'), 'w') as handle:
-        print('Saving to: {}'.format(os.path.join(save_dir, 'spanbert_tacred.jsonl')))
-        for instance in formatted_data:
-            line = "{}\n".format(instance)
-            handle.write(line)
+    save_dir = None # Specify where to save data
+    if save_dir is not None:
+        os.makedirs(save_dir, exist_ok=True)
+        print('saving to: {}'.format(save_dir))
+        np.savetxt(os.path.join(save_dir, 'correct_ids.txt'), correct_ids, fmt='%s')
+        np.savetxt(os.path.join(save_dir, 'wrong_ids.txt'), wrong_ids, fmt='%s')
+        np.savetxt(os.path.join(save_dir, 'wrong_predictions.txt'), wrong_relations, fmt='%s')
+        np.savetxt(os.path.join(save_dir, 'correct_predictions.txt'), correct_predictions, fmt='%s')
+        np.savetxt(os.path.join(save_dir, 'all_predictions.txt'), all_predictions, fmt='%s')
+        np.savetxt(os.path.join(save_dir, 'all_ids.txt'), all_ids, fmt='%s')
+
+        json.dump(id2preds, open(os.path.join(save_dir, 'id2preds.json'), 'w'))
+
+        with open(os.path.join(save_dir, 'spanbert_tacred.jsonl'), 'w') as handle:
+            print('Saving to: {}'.format(os.path.join(save_dir, 'spanbert_tacred.jsonl')))
+            for instance in formatted_data:
+                line = "{}\n".format(instance)
+                handle.write(line)
 
     result = compute_f1(preds, eval_label_ids.numpy())
     result['accuracy'] = simple_accuracy(preds, eval_label_ids.numpy())
