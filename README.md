@@ -1,6 +1,6 @@
 # Re-TACRED: Addressing Shortcomings of the TACRED Dataset
 
-## AAAI 2021 Paper ID: 3163
+## AAAI 2021 Submission ID: 3163
 
 ### This repository cotains all the necessary code to replicate our submission results. 
 
