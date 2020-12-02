@@ -2,7 +2,7 @@
 
 ## AAAI 2021 Submission ID: 3163
 
-### This repository cotains all the necessary code to replicate our submission results. 
+### Work In Progress Until AAAI Publication
 
 We divide it up into four directories. 
 
