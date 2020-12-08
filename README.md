@@ -33,6 +33,7 @@ save_dir = None
 With the path to your TACRED dataset save directory, and the directory where you wish to save the patched data to respectively.
 
 **Model Directories**
+
 We base our experiments off of the open-source model repositories of:
 * [PA-LSTM](https://github.com/yuhaozhang/tacred-relation.git): Zhang et. al. (2017) 
 * [C-GCN](https://github.com/qipeng/gcn-over-pruned-trees.git): Zhang et. al. (2018)
