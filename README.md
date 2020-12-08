@@ -1,10 +1,18 @@
-# Re-TACRED: Addressing Shortcomings of the TACRED Dataset
+# Re-TACRED
 
-## AAAI 2021 Submission ID: 3163
+Authors,
+ ```$xslt
+Re-TACRED: Addressing Shortcomings of the TACRED Dataset
+George Stoica, Emmanouil Antonios Platanios, and Barnabás Póczos
+In Proceedings of the Thirty-fourth AAAI Conference on Artificial Intelligence 2021
+```
 
-### This repository cotains all the necessary code to replicate our submission results. 
+This repository contains all relevant resources for using Re-TACRED, a new relation extraction dataset. 
 
-We divide it up into four directories. 
+For details on this work please check out our:
+* AAAI 2021 paper: Camera Ready in Progress
+* NeurIPS 2020 KR2ML Workshop: [Paper](https://kr2ml.github.io/2020/papers/KR2ML_12_paper.pdf) & [Poster](https://kr2ml.github.io/2020/papers/KR2ML_12_poster.pdf)
+
 
 **Re-TACRED**
 
@@ -23,8 +31,13 @@ save_dir = None
 ```
 With the path to your TACRED dataset save directory, and the directory where you wish to save the patched data to respectively.
 
+**Model Directories**
 
-**SpanBERT**
+We base our experiments off of the open-source model repositories of:
+* [PA-LSTM](https://github.com/yuhaozhang/tacred-relation.git): Zhang et. al. (2017) 
+* [C-GCN](https://github.com/qipeng/gcn-over-pruned-trees.git): Zhang et. al. (2018)
+* [SpanBERT](https://github.com/facebookresearch/SpanBERT): Joshi et. al. (2019)
 
-We perform our SpanBERT experiments using the open-source repository provided by Joshi et al. (2019) [here](https://github.com/facebookresearch/SpanBERT). All our experiments are performed using the SpanBERT case-large model. However, we make a few alterations to the evaluation pipeline. This directory contains the *complete* files that contain all our changes. Simply replacy "run_tacred.py" in the SpanBERT repository with our "run_tacred.py" script, and then add the "scorer.py" and "category_maps.py" files in the same directory. Training and evaluation are performed as in the linked repository, but note that for evaluation on the test split, you must pass "--eval_test" as an additional commandline argument.
-
+However, it is not possible to simply pass Re-TACRED to each model repository because each is hardcoded for TACRED. Thus, we must modify certain files to make each model Re-TACRED compatible. 
+To make it as easy as possible, we provide all our altered files in each named model directory (e.g., the provided PA-LSTM directory). All that needs to be done is to replace the corresponding file in our provided directory with the corresponding file in the original model repository. For instance, you may replace SpanBERT's "run_tacred.py" file with our "run_tacred.py" file.
+Running experiments is equivalent to how it is performed in the original model repositories.
