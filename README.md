@@ -13,6 +13,7 @@ For details on this work please check out our:
 * AAAI 2021 paper: Camera Ready in Progress
 * NeurIPS 2020 KR2ML Workshop: [Paper](https://kr2ml.github.io/2020/papers/KR2ML_12_paper.pdf) & [Poster](https://kr2ml.github.io/2020/papers/KR2ML_12_poster.pdf)
 
+Below we describe the contents of the four repository directories by name.
 
 **Re-TACRED**
 
