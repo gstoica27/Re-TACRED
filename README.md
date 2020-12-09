@@ -4,7 +4,7 @@ Authors,
  ```$xslt
 Re-TACRED: Addressing Shortcomings of the TACRED Dataset
 George Stoica, Emmanouil Antonios Platanios, and Barnabás Póczos
-In Proceedings of the Thirty-fourth AAAI Conference on Artificial Intelligence 2021
+In Proceedings of the Thirty-fifth AAAI Conference on Artificial Intelligence 2021
 ```
 
 This repository contains all relevant resources for using Re-TACRED, a new relation extraction dataset. 
