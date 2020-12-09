@@ -1,6 +1,5 @@
 # Re-TACRED
 
-Authors,
  ```$xslt
 Re-TACRED: Addressing Shortcomings of the TACRED Dataset
 George Stoica, Emmanouil Antonios Platanios, and Barnabás Póczos
@@ -32,7 +31,7 @@ save_dir = None
 ```
 With the path to your TACRED dataset save directory, and the directory where you wish to save the patched data to respectively.
 
-**Model Directories**
+**PA-LSTM, C-GCN & SpanBERT**
 
 We base our experiments off of the open-source model repositories of:
 * [PA-LSTM](https://github.com/yuhaozhang/tacred-relation.git): Zhang et. al. (2017) 
