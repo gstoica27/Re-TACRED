@@ -122,8 +122,6 @@ for epoch in range(1, opt['num_epoch']+1):
             duration = time.time() - start_time
             print(format_str.format(datetime.now(), global_step, max_steps, epoch,\
                     opt['num_epoch'], loss, duration, current_lr))
-        if i == 0:
-            break
 
     # eval on dev
     print("Evaluating on dev set...")
