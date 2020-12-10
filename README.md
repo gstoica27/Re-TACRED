@@ -19,7 +19,7 @@ Below we describe the contents of the four repository directories by name.
 This directory contains version 1.0 of our revised TACRED dataset patches for each split. Due to licensing restrictions, we cannot provide the complete dataset. 
 However, following Alt, Gabryszak, and Hennig (2020), our patch consists of json files mapping TACRED instances by their id to our revised labels. 
 Note that our train/development/test splits are slightly smaller than the complete TACRED dataset. This is due to our removal of non-english TACRED data, 
-mentioned in Section 3.5 of our submission. 
+mentioned in Section 3.5 of our AAAI paper and Appendix A.3 of our KR2ML paper. 
 
 The original TACRED dataset is available for download from the LDC [here](https://catalog.ldc.upenn.edu/LDC2018T24). It is free for members, or $25 for non-members.
 
