@@ -9,7 +9,7 @@ In Proceedings of the Thirty-fifth AAAI Conference on Artificial Intelligence 20
 This repository contains all relevant resources for using Re-TACRED, a new relation extraction dataset. 
 
 For details on this work please check out our:
-* AAAI 2021 paper: Camera Ready in Progress
+* AAAI 2021: Camera Ready in Progress
 * NeurIPS 2020 KR2ML Workshop: [Paper](https://kr2ml.github.io/2020/papers/KR2ML_12_paper.pdf) & [Poster](https://kr2ml.github.io/2020/papers/KR2ML_12_poster.pdf)
 
 Below we describe the contents of the four repository directories by name.
@@ -19,7 +19,7 @@ Below we describe the contents of the four repository directories by name.
 This directory contains version 1.0 of our revised TACRED dataset patches for each split. Due to licensing restrictions, we cannot provide the complete dataset. 
 However, following Alt, Gabryszak, and Hennig (2020), our patch consists of json files mapping TACRED instances by their id to our revised labels. 
 Note that our train/development/test splits are slightly smaller than the complete TACRED dataset. This is due to our removal of non-english TACRED data, 
-mentioned in Section 3.5 of our submission. 
+mentioned in Section 3.5 of our AAAI paper and Appendix A.3 of our KR2ML paper. 
 
 The original TACRED dataset is available for download from the LDC [here](https://catalog.ldc.upenn.edu/LDC2018T24). It is free for members, or $25 for non-members.
 
@@ -41,3 +41,5 @@ We base our experiments off of the open-source model repositories of:
 However, it is not possible to simply pass Re-TACRED to each model repository because each is hardcoded for TACRED. Thus, we must modify certain files to make each model Re-TACRED compatible. 
 To make it as easy as possible, we provide all our altered files in each named model directory (e.g., the provided PA-LSTM directory). All that needs to be done is to replace the corresponding file in our provided directory with the corresponding file in the original model repository. For instance, you may replace SpanBERT's "run_tacred.py" file with our "run_tacred.py" file.
 Running experiments is equivalent to how it is performed in the original model repositories.
+
+Note that our files also contain certain "quality of life" changes that make running each model more convenient for us. Examples include adding and tracking the test split while training (as opposed to only the dev set). 
