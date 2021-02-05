@@ -6,6 +6,11 @@ George Stoica, Emmanouil Antonios Platanios, and Barnabás Póczos
 In Proceedings of the Thirty-fifth AAAI Conference on Artificial Intelligence 2021
 ```
 
+**Changelog**
+* 1.0 - Initial dataset release: Data consisted of 105,206 total instances spread across 40 relations. 
+* 1.1 - Updated dataset release: After extensive discussion, we have elected to prune Re-TACRED by ~ 14K instances. The new dataset has 91,467 instances, spread across 40 relations. Pruned data consisted of a mixture of messily segmented entities (and corresponding types), or sentences whose relations were ambigious. While this version is smaller, it is cleaner, and better defined. 
+
+
 This repository contains all relevant resources for using Re-TACRED, a new relation extraction dataset. 
 
 For details on this work please check out our:
@@ -16,7 +21,7 @@ Below we describe the contents of the four repository directories by name.
 
 **Re-TACRED**
 
-This directory contains version 1.0 of our revised TACRED dataset patches for each split. Due to licensing restrictions, we cannot provide the complete dataset. 
+This directory contains version 1.1 of our revised TACRED dataset patches for each split. Due to licensing restrictions, we cannot provide the complete dataset. 
 However, following Alt, Gabryszak, and Hennig (2020), our patch consists of json files mapping TACRED instances by their id to our revised labels. 
 Note that our train/development/test splits are slightly smaller than the complete TACRED dataset. This is due to our removal of non-english TACRED data, 
 mentioned in Section 3.5 of our AAAI paper and Appendix A.3 of our KR2ML paper. 
