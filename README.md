@@ -14,7 +14,7 @@ In Proceedings of the Thirty-fifth AAAI Conference on Artificial Intelligence 20
 This repository contains all relevant resources for using Re-TACRED, a new relation extraction dataset. 
 
 For details on this work please check out our:
-* AAAI 2021: Camera Ready in Progress & [Poster](https://gstoica27.github.io/assets/pdf/Re-TACRED_Poster.pdf)
+* AAAI 2021: [Paper](https://gstoica27.github.io/assets/pdf/AAAI_Re_TACRED_CR.pdf) (ArXiv coming soon!) & [Poster](https://gstoica27.github.io/assets/pdf/Re-TACRED_Poster.pdf)
 * NeurIPS 2020 KR2ML Workshop: [Paper](https://kr2ml.github.io/2020/papers/KR2ML_12_paper.pdf) & [Poster](https://kr2ml.github.io/2020/papers/KR2ML_12_poster.pdf)
 
 Below we describe the contents of the four repository directories by name.
