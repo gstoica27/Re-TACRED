@@ -5,7 +5,7 @@ Re-TACRED: Addressing Shortcomings of the TACRED Dataset
 George Stoica, Emmanouil Antonios Platanios, and Barnabás Póczos
 In Proceedings of the Thirty-fifth AAAI Conference on Artificial Intelligence 2021
 ```
-Primary Contact: George Stoica. As of May 2021, I will no longer be affiliated with CMU, and the cs.cmu.edu email will no longer work. Please contact me instead at: gistoica27@gmail.com.
+Primary Contact: George Stoica. As of Jan 2021, I am no longer affiliated with CMU, and the cs.cmu.edu email may no longer work. Please contact me instead at: gistoica27@gmail.com.
 
 **Changelog**
 * 1.0 - Initial dataset release: Data consisted of 105,206 total instances spread across 40 relations. 
